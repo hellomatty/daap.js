@@ -1,0 +1,46 @@
+daap.js
+=======
+
+This is an implementation of the Digital Audio Access Protocol on top of node.js - you can use it to share music to Apple's iTunes app. You can find out more about DAAP at:
+
+http://en.wikipedia.org/wiki/Digital_Audio_Access_Protocol
+
+Yes, this works with iTunes 10!
+
+Prerequisites
+-------------
+daap.js was developeed against node.js v0.2.0 from Macports, on Mac OSX 10.6.4 - but there's nothing tricky going on here so it should work much more broadly.
+
+If the node_mdns (http://github.com/agnat/node_mdns) modeule is found daap.js will advertise itself over Bonjour/ zerconf - this will make your server pop up as a 'shared library' in iTunes.
+
+Getting Started
+---------------
+This is more of a sketch than a consumer app so you'll definitely need to do some tinkering to get up and running. This may include:
+ - modifying the Makefile to point to your node.js executable and library locations
+ - changing the listen port in eg/server.js
+ - specifying the songs to share in eg/server.js (mp3s only)
+
+The included Makefile has a 'run' target that will start the server.
+a look at eg/server.js to configure listen port etc.
+
+Contact
+-------
+If you have feedback I'd love to hear it! Find me at:
+ - hellomatty@gmail.com
+ - http://twitter.com/hellomatty
+
+License
+-------
+Copyright 2010 Matthew Wood
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
