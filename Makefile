@@ -6,4 +6,5 @@ run:
 	$(NODE) eg/server.js 
 
 test: all
-	$(NODE) test/*.js
+	$(NODE) test/binary.js
+	$(NODE) test/dmap.js

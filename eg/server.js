@@ -3,9 +3,7 @@ var Song = require('song').Song;
 
 daap.createServer({
   advertise:true,
-  songs: [new Song({name: 'Camino Del Sol',
-          album: 'Jerez Funny Songs',
-          artist: 'Spanish Lady',
+  songs: [new Song({
           file: 'cancion.mp3'
         })]
 }).listen(36850);
