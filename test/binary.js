@@ -30,6 +30,9 @@ assert.deepEqual([ 0, 0, 0, 0, 0, 0, 0, 1 ], binary.packLong(1), 'pack_long: 1')
 assert.equal(1, binary.unpackLong([0,0,0,0,0,0,0,1]), 'unpack_long: 1');
 
 assert.deepEqual([65, 66, 67], binary.packString('ABC'), 'pack_string: abc');;
+assert.deepEqual([0xC2, 0xA2], binary.packString('\u00A2'), 'pack_string: U+00A2');;
+assert.deepEqual([0xE2, 0x82, 0xAC], binary.packString('\u20AC'), 'pack_string: U+20AC');;
+
 assert.deepEqual('ABC', binary.unpackString([65, 66, 67], 0, 3), 'unpack_string: abc');
 
 var now_fixture = 'Sun, 29 Aug 2010 20:20:53 GMT';
