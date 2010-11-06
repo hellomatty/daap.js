@@ -34,6 +34,9 @@ assert.deepEqual([0xC2, 0xA2], binary.packString('\u00A2'), 'pack_string: U+00A2
 assert.deepEqual([0xE2, 0x82, 0xAC], binary.packString('\u20AC'), 'pack_string: U+20AC');;
 
 assert.deepEqual('ABC', binary.unpackString([65, 66, 67], 0, 3), 'unpack_string: abc');
+assert.deepEqual('\u00a2', binary.unpackString([0xC2, 0xA2], 0, 2), 'unpack_string: \U+00A2');
+assert.deepEqual('\u20AC', binary.unpackString([0xE2,0x82,0xAC], 0, 3), 'unpack_string: \U+20AC');
+assert.deepEqual('\uFEFFCamino Del Sol', binary.unpackString([0xff, 0xfe, 0x43, 00, 0x61, 00, 0x6d, 00, 0x69, 00, 0x6e, 00, 0x6f, 00, 0x20, 00, 0x44, 00, 0x65, 00, 0x6c, 00, 0x20, 00, 0x53, 00, 0x6f, 00, 0x6c, 00], 0, 30, binary.characterEncoding.utf16));
 
 var now_fixture = 'Sun, 29 Aug 2010 20:20:53 GMT';
 var now = new Date(now_fixture);

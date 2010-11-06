@@ -6,5 +6,6 @@ run:
 	$(NODE) eg/server.js 
 
 test: all
-	$(NODE) test/binary.js
-	$(NODE) test/dmap.js
+	for t in `ls test/*.js`; do \
+		$(NODE) $${t}; \
+	done
